@@ -18,7 +18,12 @@
   <%= f.label :subtitle_eq, "LEGENDAS" %>
   <%= f.select :subtitle_eq, options_for_select([['Sim', 't'], ['Não', 'f']]), include_blank: 'Possui Legendas'%>
 
+  <%= f.label :created_at_gteq, "INICIO" %>
+  <%= f.search_field :created_at_gteq %>
 
+  <%= f.label :created_at_lteq, "FIM" %>
+  <%= f.search_field :created_at_lteq %>
+  
 
   <%= f.submit %>
 <% end %>

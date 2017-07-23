@@ -5,6 +5,21 @@
 <%= search_form_for @search do |f| %>
   <%= f.label :name_cont, "NOME:" %>
   <%= f.search_field :name_cont %>
+
+  <%= f.label :seasons_eq, "TEMPORADAS" %>
+  <%= f.search_field :seasons_eq %>
+
+  <%= f.label :year_eq, "ANO DE LANÇAMENTO" %>
+  <%= f.search_field :year_eq %>
+
+  <%= f.label :kind_cont, "TIPO" %>
+  <%= f.search_field :kind_eq %>
+
+  <%= f.label :subtitle_eq, "LEGENDAS" %>
+  <%= f.select :subtitle_eq, options_for_select([['Sim', 't'], ['Não', 'f']]), include_blank: 'Possui Legendas'%>
+
+
+
   <%= f.submit %>
 <% end %>
 
@@ -23,16 +38,16 @@
   </thead>
 
   <tbody>
-    <% @series.each do |series| %>
+    <% @series.each do |serie| %>
       <tr>
-        <td><%= series.name %></td>
-        <td><%= series.seasons %></td>
-        <td><%= series.year %></td>
-        <td><%= series.kind %></td>
-        <td><%= series.subtitle %></td>
-        <td><%= link_to 'Show', series %></td>
-        <td><%= link_to 'Edit', edit_series_path(series) %></td>
-        <td><%= link_to 'Destroy', series, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= serie.name %></td>
+        <td><%= serie.seasons %></td>
+        <td><%= serie.year %></td>
+        <td><%= serie.kind %></td>
+        <td><%= serie.subtitle %></td>
+        <td><%= link_to 'Show', serie %></td>
+        <td><%= link_to 'Edit', edit_series_path(serie) %></td>
+        <td><%= link_to 'Destroy', serie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

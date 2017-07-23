@@ -1,5 +1,13 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Buscar Séries</h1>
+
+<%= search_form_for @series do |f| %>
+  <%= f.label :name_serie_cont, "NOME:" %>
+  <%= f.search_field :name_serie_cont %>
+  <%= f.submit %>
+<% end %>
+
 <h1>Series</h1>
 
 <table>
